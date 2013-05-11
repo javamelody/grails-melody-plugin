@@ -26,7 +26,15 @@ Integrate Java Melody Monitor into grails application.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/GrailsMelody+Plugin"
+    def documentation = "http://grails.org/plugin/grails-melody"
+
+    def license = "LGPL3"
+    def organization = [ name: "JavaMelody", url: "http://javamelody.googlecode.com" ]
+    def developers = [
+            [ name: "Liu Chao", email: "" ],
+            [ name: "Emeric Vernat", email: "" ] ]
+    def issueManagement = [ system: "github", url: "https://github.com/evernat/grails-melody-plugin/issues" ]
+    def scm = [ url: "git://github.com/evernat/grails-melody-plugin.git" ]
 
     def doWithSpring = {
         //Wrap grails datasource with java melody JdbcWapper
