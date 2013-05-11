@@ -1,0 +1,28 @@
+<plugin name='grails-melody' version='1.21' grailsVersion='1.2.4 &gt; *'>
+  <author>Liu Chao</author>
+  <authorEmail>liuchao@goal98.com</authorEmail>
+  <title>Grails Java Melody Plugin</title>
+  <description>\
+Integrate Java Melody Monitor into grails application.
+</description>
+  <documentation>http://grails.org/GrailsMelody+Plugin</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+  </resources>
+  <dependencies>
+    <resolvers>
+      <resolver type='grailsPlugins' name='grailsPlugins' />
+      <resolver type='mavenCentral' />
+    </resolvers>
+    <dependency group='net.bull.javamelody' name='javamelody-core' version='1.44.0' conf='compile' transitive='true' />
+    <dependency group='org.jrobin' name='jrobin' version='1.5.9' conf='compile' transitive='true' />
+    <dependency group='com.lowagie' name='itext' version='2.1.7' conf='compile' transitive='true'>
+      <excludes group='*' name='bcmail-jdk14' />
+      <excludes group='*' name='bcprov-jdk14' />
+      <excludes group='*' name='bctsp-jdk14' />
+    </dependency>
+  </dependencies>
+  <behavior />
+</plugin>
