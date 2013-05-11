@@ -1,4 +1,4 @@
-<plugin name='grails-melody' version='1.21' grailsVersion='1.2.4 &gt; *'>
+<plugin name='grails-melody' version='1.44' grailsVersion='1.2.4 &gt; *'>
   <author>Liu Chao</author>
   <authorEmail>liuchao@goal98.com</authorEmail>
   <title>Grails Java Melody Plugin</title>
