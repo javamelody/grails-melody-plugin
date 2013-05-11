@@ -18,8 +18,6 @@ class GrailsMelodyGrailsPlugin {
             "grails-app/views/error.gsp"
     ]
 
-    def author = "Liu Chao"
-    def authorEmail = "liuchao@goal98.com"
     def title = "Grails Java Melody Plugin"
     def description = '''\\
 Integrate Java Melody Monitor into grails application.
@@ -31,8 +29,8 @@ Integrate Java Melody Monitor into grails application.
     def license = "LGPL3"
     def organization = [ name: "JavaMelody", url: "http://javamelody.googlecode.com" ]
     def developers = [
-            [ name: "Liu Chao", email: "" ],
-            [ name: "Emeric Vernat", email: "" ] ]
+            [ name: "Liu Chao", email: "liuchao@goal98.com" ],
+            [ name: "Emeric Vernat", email: "evernat@free.fr" ] ]
     def issueManagement = [ system: "github", url: "https://github.com/evernat/grails-melody-plugin/issues" ]
     def scm = [ url: "git://github.com/evernat/grails-melody-plugin.git" ]
 
@@ -48,7 +46,7 @@ Integrate Java Melody Monitor into grails application.
 
 	def getWebXmlFilterOrder() {
 		def FilterManager = getClass().getClassLoader().loadClass('grails.plugin.webxml.FilterManager')
-		[ monitoring : FilterManager.GRAILS_WEB_REQUEST_POSITION + 200]
+		[monitoring : FilterManager.GRAILS_WEB_REQUEST_POSITION + 200]
 	}
 
     def doWithWebDescriptor = {xml ->
