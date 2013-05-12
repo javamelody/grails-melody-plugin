@@ -1,2 +1,6 @@
 target
 docs
+/web-app
+/*.zip
+/plugin.xml
+/*.log
