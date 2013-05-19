@@ -17,8 +17,8 @@ class GrailsMelodyGrailsPlugin {
 		'shiro'
 	]
 
-	def title = "Grails Java Melody Plugin"
-	def description = 'Integrate Java Melody Monitor into grails application.'
+	def title = "JavaMelody Grails Plugin"
+	def description = 'Integrate JavaMelody Monitoring into grails application.'
 	def documentation = "http://grails.org/plugin/grails-melody"
 
 	def license = "LGPL3"
