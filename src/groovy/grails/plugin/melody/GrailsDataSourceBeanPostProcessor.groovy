@@ -12,7 +12,7 @@ class GrailsDataSourceBeanPostProcessor implements BeanPostProcessor {
 
     Object postProcessAfterInitialization(Object bean, String beanName) {
 
-        if (bean instanceof DataSource && "dataSource" == beanName){
+        if (bean instanceof DataSource){
             return JdbcWrapper.SINGLETON.createDataSourceProxy(bean)
         }
 
