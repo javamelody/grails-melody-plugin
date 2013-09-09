@@ -134,11 +134,22 @@ class GrailsMelodyGrailsPlugin {
 					List methods = delegate.metaClass.getMethods()
 					boolean found = false
 					for (MetaMethod method in methods) {
-						if (method.getName() == name) {
-							metaMethod = method
-							found = true
-							break
-						}
+                  if (method.getName() == name) {
+                     def parameterTypes = method.nativeParameterTypes
+                     if(parameterTypes.length == args.length) {
+                        found = true
+                        for(int i = 0; i < parameterTypes.length; i++) {
+                           if(!parameterTypes[i].isAssignableFrom(args[i].class)) {
+                              found = false
+                              break
+                           }
+                        }
+                        if(found) {
+                           metaMethod = method
+                           break
+                        }
+                     }
+                  }
 					}
 					if(!found && delegate.metaClass.properties.find {it.name == name}){
 						def property = delegate."${name}"
