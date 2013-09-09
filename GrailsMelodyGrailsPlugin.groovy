@@ -139,7 +139,7 @@ class GrailsMelodyGrailsPlugin {
                      if(parameterTypes.length == args.length) {
                         found = true
                         for(int i = 0; i < parameterTypes.length; i++) {
-                           if(!parameterTypes[i].isAssignableFrom(args[i].class)) {
+                           if((args[i] != null && !parameterTypes[i].isAssignableFrom(args[i].getClass())) || (parameterTypes[i].primitive && args[i] == null)) {
                               found = false
                               break
                            }
