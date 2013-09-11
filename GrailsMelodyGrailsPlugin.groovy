@@ -140,7 +140,7 @@ class GrailsMelodyGrailsPlugin {
 							break
 						}
 					}
-					if(!found && delegate.metaClass.properties.find {it.name == name}){
+					if(!found && delegate."${name}"){
 						def property = delegate."${name}"
 						if(property instanceof Closure){
 							found = true
