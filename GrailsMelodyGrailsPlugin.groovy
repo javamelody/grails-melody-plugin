@@ -44,20 +44,21 @@ class GrailsMelodyGrailsPlugin {
 		def contextParam = xml.'context-param'
 
 		contextParam[contextParam.size() - 1] + {
+			//load configuration from GrailsMelodyConfig.groovy
+			def conf = GrailsMelodyUtil.getGrailsMelodyConfig(application)?.javamelody
+			conf?.each {
+				String name = it.key
+				String value = it.value
+				log.debug "Grails Melody Param: $name = $value"
+				'context-param' {
+					'param-name'('javamelody.'+name)
+					'param-value'(value)
+				}
+			}
+
 			'filter' {
 				'filter-name'('monitoring')
 				'filter-class'(MonitoringFilter.name)
-				//load configuration from GrailsMelodyConfig.groovy
-				def conf = GrailsMelodyUtil.getGrailsMelodyConfig(application)?.javamelody
-				conf?.each {
-					String name = it.key
-					String value = it.value
-					log.debug "Grails Melody Param: $name = $value"
-					'init-param' {
-						'param-name'(name)
-						'param-value'(value)
-					}
-				}
 			}
 		}
 
