@@ -8,7 +8,7 @@ import net.bull.javamelody.SessionListener
 
 class GrailsMelodyGrailsPlugin {
 
-	def version = "1.47"
+	def version = "1.47.1"
 	def grailsVersion = "2.0 > *"
 
 	def loadAfter = [
