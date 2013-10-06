@@ -1,5 +1,5 @@
-import grails.plugin.melody.GrailsDataSourceBeanPostProcessor
 import grails.plugin.melody.GrailsMelodyUtil
+import net.bull.javamelody.JdbcWrapper
 import net.bull.javamelody.MonitoringFilter
 import net.bull.javamelody.MonitoringProxy
 import net.bull.javamelody.Parameter
@@ -29,11 +29,7 @@ class GrailsMelodyGrailsPlugin {
 	def issueManagement = [ system: "GitHub", url: "https://github.com/evernat/grails-melody-plugin/issues" ]
 	def scm = [ url: "https://github.com/evernat/grails-melody-plugin.git" ]
 
-	def doWithSpring = {
-		//Wrap grails datasource with java melody JdbcWapper
-		grailsDataSourceBeanPostProcessor(GrailsDataSourceBeanPostProcessor)
-	}
-
+	
 	def getWebXmlFilterOrder() {
 		def FilterManager = getClass().getClassLoader().loadClass('grails.plugin.webxml.FilterManager')
 		[monitoring : FilterManager.GRAILS_WEB_REQUEST_POSITION + 200]
@@ -112,6 +108,16 @@ class GrailsMelodyGrailsPlugin {
 		return filters[filters.size() - 1]
 	}
 
+	def doWithApplicationContext = { ctx ->
+		//Need to wrap the datasources here, because BeanPostProcessor didn't worked.
+		def beans = ctx.getBeansOfType(DataSource)
+		beans.each { beanName, bean ->
+			if(bean?.hasProperty("targetDataSource")) {
+				bean.targetDataSource = JdbcWrapper.SINGLETON.createDataSourceProxy(bean.targetDataSource)
+			}
+		}
+	}
+	
 	def doWithDynamicMethods = {ctx ->
 		//For each service class in Grails, the plugin use groovy meta programming (invokeMethod)
 		//to 'intercept' method call and collect infomation for monitoring purpose.
