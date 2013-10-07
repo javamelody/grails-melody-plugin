@@ -5,6 +5,7 @@ import net.bull.javamelody.MonitoringProxy
 import net.bull.javamelody.Parameter
 import net.bull.javamelody.Parameters
 import net.bull.javamelody.SessionListener
+import javax.sql.DataSource
 
 class GrailsMelodyGrailsPlugin {
 
