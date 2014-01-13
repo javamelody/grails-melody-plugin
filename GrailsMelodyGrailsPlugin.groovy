@@ -2,8 +2,6 @@ import grails.plugin.melody.GrailsMelodyUtil
 import net.bull.javamelody.JdbcWrapper
 import net.bull.javamelody.MonitoringFilter
 import net.bull.javamelody.MonitoringProxy
-import net.bull.javamelody.Parameter
-import net.bull.javamelody.Parameters
 import net.bull.javamelody.SessionListener
 import javax.sql.DataSource
 
@@ -124,7 +122,7 @@ class GrailsMelodyGrailsPlugin {
 		//to 'intercept' method call and collect infomation for monitoring purpose.
 		//The code below mimics 'MonitoringSpringInterceptor.invoke()'
 		def SPRING_COUNTER = MonitoringProxy.getSpringCounter()
-		final boolean DISABLED = Boolean.parseBoolean(Parameters.getParameter(Parameter.DISABLED))
+		final boolean DISABLED = GrailsMelodyUtil.getGrailsMelodyConfig(application)?.javamelody?.disabled
 
 		if (DISABLED || !SPRING_COUNTER.isDisplayed()) {
 			return
