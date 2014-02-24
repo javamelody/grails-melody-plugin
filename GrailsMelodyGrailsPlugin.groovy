@@ -2,6 +2,8 @@ import grails.plugin.melody.GrailsMelodyUtil
 import net.bull.javamelody.JdbcWrapper
 import net.bull.javamelody.MonitoringFilter
 import net.bull.javamelody.MonitoringProxy
+import net.bull.javamelody.Parameter
+import net.bull.javamelody.Parameters
 import net.bull.javamelody.SessionListener
 import javax.sql.DataSource
 
