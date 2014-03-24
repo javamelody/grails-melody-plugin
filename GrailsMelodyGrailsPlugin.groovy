@@ -22,7 +22,7 @@ class GrailsMelodyGrailsPlugin {
 	def description = 'Integrate JavaMelody Monitoring into grails application.'
 	def documentation = "http://grails.org/plugin/grails-melody"
 
-	def license = "LGPL3"
+	def license = "ASL"
 	def organization = [ name: "JavaMelody", url: "http://javamelody.googlecode.com" ]
 	def developers = [
 			[ name: "Liu Chao", email: "liuchao@goal98.com" ],
