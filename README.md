@@ -5,7 +5,7 @@ JavaMelody monitoring plugin for Grails, to monitor application performance
 
 Plugin page with install notes: http://www.grails.org/plugin/grails-melody
 
-JavaMelody user guide: https://code.google.com/p/javamelody/wiki/UserGuide#Grails_Plugin
+JavaMelody user guide: https://github.com/javamelody/javamelody/wiki/UserGuide#grails-plugin
 
 Continuous integration: https://javamelody.ci.cloudbees.com/job/grails%20melody%20plugin/
 
