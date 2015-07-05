@@ -23,7 +23,7 @@ class GrailsMelodyGrailsPlugin {
 	def documentation = "http://grails.org/plugin/grails-melody"
 
 	def license = "ASL"
-	def organization = [ name: "JavaMelody", url: "http://javamelody.googlecode.com" ]
+	def organization = [ name: "JavaMelody", url: "https://github.com/javamelody/javamelody/wiki" ]
 	def developers = [
 			[ name: "Liu Chao", email: "liuchao@goal98.com" ],
 			[ name: "Emeric Vernat", email: "evernat@free.fr" ] ]
