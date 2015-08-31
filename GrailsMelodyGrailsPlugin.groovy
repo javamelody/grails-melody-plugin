@@ -27,8 +27,8 @@ class GrailsMelodyGrailsPlugin {
 	def developers = [
 			[ name: "Liu Chao", email: "liuchao@goal98.com" ],
 			[ name: "Emeric Vernat", email: "evernat@free.fr" ] ]
-	def issueManagement = [ system: "GitHub", url: "https://github.com/evernat/grails-melody-plugin/issues" ]
-	def scm = [ url: "https://github.com/evernat/grails-melody-plugin.git" ]
+	def issueManagement = [ system: "GitHub", url: "https://github.com/javamelody/grails-melody-plugin/issues" ]
+	def scm = [ url: "https://github.com/javamelody/grails-melody-plugin.git" ]
 
 	
 	def getWebXmlFilterOrder() {
