@@ -10,7 +10,7 @@ class GrailsMelodyUtil {
 		def config = application.config
 		GroovyClassLoader classLoader = new GroovyClassLoader(application.getClassLoader())
 		try {
-			config.merge(new ConfigSlurper(Environment.current.name()).parse(classLoader.loadClass('GrailsMelodyConfig')))
+			config.merge(new ConfigSlurper(Environment.current.name().toLowerCase()).parse(classLoader.loadClass('GrailsMelodyConfig')))
 		} catch (Exception e) {
 			// ignored, use defaults
 		}
