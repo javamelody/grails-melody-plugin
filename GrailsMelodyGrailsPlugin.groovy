@@ -126,7 +126,7 @@ class GrailsMelodyGrailsPlugin {
 		def SPRING_COUNTER = MonitoringProxy.getSpringCounter()
 		final boolean DISABLED = GrailsMelodyUtil.getGrailsMelodyConfig(application)?.javamelody?.disabled || Boolean.parseBoolean(Parameters.getParameter(Parameter.DISABLED))
 
-		if (DISABLED || !SPRING_COUNTER.isUsed()) {
+		if (DISABLED || Parameters.isCounterHidden(SPRING_COUNTER.getName())) {
 			return
 		}
 
