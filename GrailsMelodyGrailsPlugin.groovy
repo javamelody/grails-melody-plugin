@@ -9,7 +9,7 @@ import javax.sql.DataSource
 
 class GrailsMelodyGrailsPlugin {
 
-	def version = "1.58.0"
+	def version = "1.59.0"
 	def grailsVersion = "2.0 > *"
 
 	def loadAfter = [
