@@ -163,7 +163,14 @@ class GrailsMelodyGrailsPlugin {
 						def property = delegate."${name}"
 						if(property instanceof Closure){
 							found = true
-							metaMethod = [doMethodInvoke: {dlg, arguments-> property.call(arguments)}]
+							metaMethod = [doMethodInvoke: { dlg, arguments -> 
+								def theArgs = arguments
+									? arguments.size() == 1
+										? arguments[0]
+										: arguments as List
+									: null
+								property.call(theArgs)
+							}]
 						}
 					}
 					if (!found){
