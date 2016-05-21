@@ -1,8 +1,8 @@
-package grails.plugin.melody
+package grails.melody.plugin
 
+import grails.core.GrailsApplication
 import grails.util.Environment
 
-import org.codehaus.groovy.grails.commons.GrailsApplication
 
 class GrailsMelodyUtil {
 
