@@ -29,7 +29,8 @@ class GrailsMelodyPluginGrailsPlugin extends Plugin {
 
     def developers = [
             [name: 'Liu Chao', email: 'liuchao@goal98.com'],
-            [name: 'Emeric Vernat', email: 'evernat@free.fr']
+            [name: 'Emeric Vernat', email: 'evernat@free.fr'],
+            [name: 'Sérgio Michels', email: 'sergiomichelss@gmail.com']
     ]
 
     def issueManagement = [system: 'GitHub', url: 'https://github.com/javamelody/grails-melody-plugin/issues']
