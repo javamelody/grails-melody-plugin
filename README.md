@@ -26,7 +26,7 @@ A few things you might want to know:
 * grails-melody plugin overwrites original grails 'dataSource' bean in spring context with a JavaMelody datasource proxy.
 * grails-melody plugin uses groovy meta programming to intercept grails services method calls.
   
-All parameters described in the [JavaMelody UserGuide](https://github.com/javamelody/javamelody/wiki/UserGuide#6-optional-parameters)
+All parameters described in the [JavaMelody User's guide](https://github.com/javamelody/javamelody/wiki/UserGuide#6-optional-parameters)
 can be configured in your grails-app/conf/application.yml file. For example, add the following to disable the monitoring:
 ```yaml
 javamelody:
@@ -52,6 +52,12 @@ javamelody:
     sql-transform-pattern: \d+
 ```
 
+Other parameters such as storage-directory, url-exclude-pattern, log, monitoring-path, authorized-users or allowed-addr-pattern can also be configured.
+
+You can also add rules for the spring security plugin, if installed:
+```yaml
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [ [pattern: '/monitoring', access: ['ROLE_ADMIN']] ]
+```
 
 License [ASL](http://www.apache.org/licenses/LICENSE-2.0)
 
