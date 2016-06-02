@@ -23,8 +23,8 @@ Then you will be able to monitor the application at ```http://localhost:8080/<Yo
 ### More configuration ###
 
 A few things you might want to know:
-* grails-melody plugin overwrites original grails 'dataSource' bean in spring context with a JavaMelody datasource proxy.
-* grails-melody plugin uses groovy meta programming to intercept grails services method calls.
+* the plugin overwrites original grails 'dataSource' bean in spring context with a JavaMelody datasource proxy.
+* the plugin uses groovy meta programming to intercept grails services method calls.
   
 All parameters described in the [JavaMelody User's guide](https://github.com/javamelody/javamelody/wiki/UserGuide#6-optional-parameters)
 can be configured in your grails-app/conf/application.yml file. For example, add the following to disable the monitoring:
