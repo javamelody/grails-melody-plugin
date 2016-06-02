@@ -9,10 +9,10 @@ _The goal of JavaMelody is to monitor applications in QA and production environm
 
 ### Installation ###
 
-To install the plugin, just add a dependency:
+To install the plugin, just add a dependency as given at the top of [the page](http://www.grails.org/plugins.html#plugin/grails-melody-plugin), but runtime is enough instead of compile. For example:
 ```
 dependencies {
-    runtime 'org.grails.plugins:grails-melody-plugin:1.59.0'
+    runtime 'org.grails.plugins:grails-melody-plugin:1.xx.0'
 }
 ```
 
