@@ -59,6 +59,4 @@ You can also add rules for the spring security plugin, if installed:
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [ [pattern: '/monitoring', access: ['ROLE_ADMIN']] ]
 ```
 
-License [ASL](http://www.apache.org/licenses/LICENSE-2.0)
-
-Please submit github pull requests and github issues.
+_Please submit github pull requests and github issues._
