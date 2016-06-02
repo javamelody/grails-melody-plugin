@@ -40,7 +40,7 @@ JavaMelody uses URIs to resolve HTTP requests. This means that
 ```
 
 will resolve as different requests.  While that's desirable in some cases, often you want the statistics to be gathered for the show action, irrespective of parameters. In that case, add the following configuration in your grails-app/conf/application.yml file and the above URIs will show up as /book/show/$. 
-```
+```yaml
 javamelody:
     # filter out numbers from URI
     http-transform-pattern: \d+
