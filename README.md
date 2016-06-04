@@ -56,9 +56,14 @@ javamelody:
 
 Other parameters such as storage-directory, url-exclude-pattern, log, monitoring-path, authorized-users or allowed-addr-pattern can also be configured.
 
-You can also add rules for the spring security plugin, if installed:
+You can also add [rules for the spring security plugin](https://grails-plugins.github.io/grails-spring-security-core/v3/index.html#requestMappings), if installed:
 ```yaml
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [ [pattern: '/monitoring', access: ['ROLE_ADMIN']] ]
+```
+or add an authorized-users parameter in grails-app/conf/application.yml:
+```yaml
+javamelody:
+    authorized-users: user1:pwd1, user2:pwd2
 ```
 
 _Please submit github pull requests and github issues._
