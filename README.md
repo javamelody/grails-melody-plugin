@@ -18,7 +18,9 @@ dependencies {
 
 Then you will be able to monitor the application at ```http://localhost:8080/<YourContext>/monitoring```.
 
-[![Download](https://api.bintray.com/packages/sergiomichels/plugins/grails-melody-plugin/images/download.svg) ](https://bintray.com/sergiomichels/plugins/grails-melody-plugin/_latestVersion) [Release Notes](https://github.com/javamelody/javamelody/wiki/ReleaseNotes) 
+[![Download](https://api.bintray.com/packages/sergiomichels/plugins/grails-melody-plugin/images/download.svg) ](https://bintray.com/sergiomichels/plugins/grails-melody-plugin/_latestVersion)
+
+[Release Notes](https://github.com/javamelody/javamelody/wiki/ReleaseNotes) 
 
 ### More configuration ###
 
