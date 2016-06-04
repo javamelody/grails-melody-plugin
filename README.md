@@ -60,7 +60,7 @@ You can also add [rules for the spring security plugin](https://grails-plugins.g
 ```yaml
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [ [pattern: '/monitoring', access: ['ROLE_ADMIN']] ]
 ```
-or add an authorized-users parameter in grails-app/conf/application.yml:
+or add an authorized-users parameter:
 ```yaml
 javamelody:
     authorized-users: user1:pwd1, user2:pwd2
