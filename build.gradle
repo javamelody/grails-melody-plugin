@@ -16,7 +16,7 @@ plugins {
     id "com.jfrog.bintray" version "1.2"
 }
 
-version "1.60.0"
+version "1.60.1"
 group "org.grails.plugins"
 
 apply plugin: 'maven-publish'
