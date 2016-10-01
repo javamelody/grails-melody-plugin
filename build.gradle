@@ -16,7 +16,7 @@ plugins {
     id "com.jfrog.bintray" version "1.2"
 }
 
-version "1.61.0"
+version "1.62.0"
 group "org.grails.plugins"
 
 apply plugin: 'maven-publish'
@@ -59,7 +59,7 @@ dependencies {
     console "org.grails:grails-console"
 
     //plugin dependencies
-    compile "net.bull.javamelody:javamelody-core:1.61.0"
+    compile "net.bull.javamelody:javamelody-core:1.62.0"
     compile ("com.lowagie:itext:2.1.7") {
         exclude module: "bcmail-jdk14"
         exclude module: "bcprov-jdk14"
