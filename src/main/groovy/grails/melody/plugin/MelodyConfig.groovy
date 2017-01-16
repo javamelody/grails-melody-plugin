@@ -38,7 +38,9 @@ class MelodyConfig implements GrailsApplicationAware {
     public FilterRegistrationBean melodyFilter() {
         log.debug "Creating Melody Filter..."
         FilterRegistrationBean melodyFilterBean = new FilterRegistrationBean()
-        melodyFilterBean.setFilter(new MonitoringFilter())
+        MonitoringFilter melodyFilter = new MonitoringFilter();
+        melodyFilter.setApplicationType("Grails");
+        melodyFilterBean.setFilter(melodyFilter);
         melodyFilterBean.setAsyncSupported(true);
         melodyFilterBean.setName(MonitoringFilter.name);
         melodyFilterBean.setDispatcherTypes(DispatcherType.REQUEST, DispatcherType.ASYNC);
