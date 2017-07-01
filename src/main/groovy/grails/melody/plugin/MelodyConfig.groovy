@@ -7,8 +7,8 @@ import net.bull.javamelody.MonitoringFilter
 import net.bull.javamelody.SessionListener
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.boot.context.embedded.FilterRegistrationBean
-import org.springframework.boot.context.embedded.ServletContextInitializer
+import org.springframework.boot.web.servlet.FilterRegistrationBean
+import org.springframework.boot.web.servlet.ServletContextInitializer
 import org.springframework.context.annotation.Bean
 
 import javax.servlet.DispatcherType
