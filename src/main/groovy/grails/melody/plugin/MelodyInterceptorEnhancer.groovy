@@ -4,7 +4,7 @@ import grails.core.GrailsApplication
 import groovy.util.logging.Slf4j
 import net.bull.javamelody.MonitoringProxy
 import net.bull.javamelody.Parameter
-import net.bull.javamelody.Parameters
+import net.bull.javamelody.internal.common.Parameters
 
 /**
  * Enhance Grails artefacts, intercepting method calls for monitoring purpose.
