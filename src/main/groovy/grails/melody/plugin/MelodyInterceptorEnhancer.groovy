@@ -28,9 +28,6 @@ class MelodyInterceptorEnhancer {
             return
         }
 
-        //Enable groovy meta programming
-        ExpandoMetaClass.enableGlobally()
-
         grailsApplication.serviceClasses.each { serviceArtifactClass ->
 
             def serviceClass = serviceArtifactClass.getClazz()
