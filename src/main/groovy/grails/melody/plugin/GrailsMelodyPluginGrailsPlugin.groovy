@@ -1,6 +1,7 @@
 package grails.melody.plugin
 
 import grails.plugins.Plugin
+import net.bull.javamelody.SpringDataSourceBeanPostProcessor
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -42,7 +43,7 @@ class GrailsMelodyPluginGrailsPlugin extends Plugin {
             melodyConfig(MelodyConfig)
 
             //Wrap grails datasource with java melody JdbcWapper
-            grailsDataSourceBeanPostProcessor(GrailsDataSourceBeanPostProcessor)
+            springDataSourceBeanPostProcessor(SpringDataSourceBeanPostProcessor)
         }
     }
 }
