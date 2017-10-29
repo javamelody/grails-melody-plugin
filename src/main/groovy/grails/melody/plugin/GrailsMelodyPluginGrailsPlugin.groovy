@@ -1,11 +1,9 @@
 package grails.melody.plugin
 
-import grails.plugins.*
+import grails.plugins.Plugin
+import net.bull.javamelody.SpringDataSourceBeanPostProcessor
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-
-import javax.sql.DataSource
-import net.bull.javamelody.JdbcWrapper
 
 class GrailsMelodyPluginGrailsPlugin extends Plugin {
 
@@ -40,20 +38,12 @@ class GrailsMelodyPluginGrailsPlugin extends Plugin {
         new MelodyInterceptorEnhancer().enhance(getGrailsApplication())
     }
 
-    void doWithApplicationContext() {
-        //Need to wrap the datasources here, because BeanPostProcessor didn't worked.
-        def beans = getApplicationContext().getBeansOfType(DataSource)
-        beans.each { beanName, bean ->
-            if (bean?.hasProperty('targetDataSource')) {
-                LOG.debug "Wrapping DataSource - $beanName"
-                bean.targetDataSource = JdbcWrapper.SINGLETON.createDataSourceProxy(bean.targetDataSource)
-            }
-        }
-    }
-
     Closure doWithSpring() {
-        {->
+        { ->
             melodyConfig(MelodyConfig)
+
+            //Wrap grails datasource with java melody JdbcWapper
+            springDataSourceBeanPostProcessor(SpringDataSourceBeanPostProcessor)
         }
     }
 }
