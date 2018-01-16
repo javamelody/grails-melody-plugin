@@ -43,7 +43,9 @@ class GrailsMelodyPluginGrailsPlugin extends Plugin {
             melodyConfig(MelodyConfig)
 
             //Wrap grails datasource with java melody JdbcWapper
-            springDataSourceBeanPostProcessor(SpringDataSourceBeanPostProcessor)
+            springDataSourceBeanPostProcessor(SpringDataSourceBeanPostProcessor) {
+                excludedDatasources = ['dataSource', 'dataSourceLazy']
+            }
         }
     }
 }
