@@ -59,7 +59,7 @@ dependencies {
     console "org.grails:grails-console"
 
     //plugin dependencies
-    compile "net.bull.javamelody:javamelody-core:1.70.0"
+    compile "net.bull.javamelody:javamelody-core:1.71.0"
     compile ("com.lowagie:itext:2.1.7") {
         exclude module: "bcmail-jdk14"
         exclude module: "bcprov-jdk14"
