@@ -1,7 +1,7 @@
 grails-melody-plugin
 ====================
 
-[JavaMelody](https://github.com/javamelody/javamelody/wiki) monitoring [plugin](http://www.grails.org/plugins.html#plugin/grails-melody-plugin) for Grails 3, to monitor application performance.
+[JavaMelody](https://github.com/javamelody/javamelody/wiki) monitoring [plugin](http://plugins.grails.org/plugin/sergiomichels/grails-melody-plugin) for Grails 3, to monitor application performance.
 
 <a href='Screenshots#charts'><img src='https://github.com/javamelody/javamelody/wiki/resources/screenshots/graphs.png' alt='Screenshots' width='50%' title='Screenshots' /></a>
 
@@ -9,7 +9,7 @@ _The goal of JavaMelody is to monitor applications in QA and production environm
 
 ### Installation ###
 
-To install the plugin, just add a dependency as given at the top of [this page](http://www.grails.org/plugins.html#plugin/grails-melody-plugin) (but runtime is enough instead of compile). For example:
+To install the plugin, just add a dependency as given at the top of [this page](http://plugins.grails.org/plugin/sergiomichels/grails-melody-plugin) (but runtime is enough instead of compile). For example:
 ```yaml
 dependencies {
     runtime 'org.grails.plugins:grails-melody-plugin:1.xx.0'
