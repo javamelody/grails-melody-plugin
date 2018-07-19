@@ -43,10 +43,27 @@ class GrailsMelodyPluginGrailsPlugin extends Plugin {
     void doWithApplicationContext() {
         //Need to wrap the datasources here, because BeanPostProcessor didn't worked.
         def beans = getApplicationContext().getBeansOfType(DataSource)
+
+        def processProxy = { beanName, bean ->
+            LOG.debug "Wrapping DataSource - $beanName"
+            bean.targetDataSource = JdbcWrapper.SINGLETON.createDataSourceProxy(bean.targetDataSource)
+        }
+
+        // Attempt lazy DataSources for Grails 3.2 and before
+        boolean lazyProxied = false
         beans.each { beanName, bean ->
             if (beanName.contains('Lazy')) {
-                LOG.debug "Wrapping DataSource - $beanName"
-                bean.targetDataSource = JdbcWrapper.SINGLETON.createDataSourceProxy(bean.targetDataSource)
+                processProxy(beanName, bean)
+                lazyProxied = true
+            }
+        }
+
+        // Attempt DataSources for Grails 3.3 and newer if no lazy proxy created
+        if (!lazyProxied) {
+            beans.each { beanName, bean ->
+                if (beanName.equals('dataSource')) {
+                    processProxy(beanName, bean)
+                }
             }
         }
     }
