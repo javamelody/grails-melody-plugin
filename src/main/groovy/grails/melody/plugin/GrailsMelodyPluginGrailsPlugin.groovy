@@ -70,6 +70,7 @@ class GrailsMelodyPluginGrailsPlugin extends Plugin {
 
     Closure doWithSpring() {
         { ->
+            ExpandoMetaClass.enableGlobally()
             melodyConfig(MelodyConfig)
         }
     }
