@@ -17,32 +17,10 @@ plugins {
     id "com.jfrog.bintray" version "1.2"
 }
 
-def removeSnapshot = { String s -> s.replace('-SNAPSHOT', '') }
-def changeVersion = { String version, int to ->
-    def versionParts = removeSnapshot(version).split('\\.')
-    def versionPartChanged = Integer.parseInt(versionParts[1]) + to
-    return "${versionParts[0]}.${versionPartChanged}.${versionParts[2]}"
-}
-
-def getJavaMelodyVersion = { String versionDependency ->
-    def url = "http://central.maven.org/maven2/net/bull/javamelody/javamelody-core/${versionDependency}/javamelody-core-${versionDependency}.jar"
-    def code = new URL(url).openConnection().with {
-        requestMethod = 'HEAD'
-        connect()
-        responseCode
-    }
-    if (code == 404) {
-        def newVersion = changeVersion(versionDependency, -1)
-        println "Using version ${newVersion} of JavaMelody dependency"
-        return newVersion
-    }
-    return versionDependency
-}
-
 
 def versionTxt = file("${rootProject.projectDir}/version.txt")
 def versionPlugin = versionTxt.exists() ? versionTxt.text.trim() : '0.1-SNAPSHOT'
-def versionDependency = getJavaMelodyVersion(removeSnapshot(versionPlugin))
+def versionDependency = '1.73.1'
 group "org.grails.plugins"
 version = versionPlugin
 
