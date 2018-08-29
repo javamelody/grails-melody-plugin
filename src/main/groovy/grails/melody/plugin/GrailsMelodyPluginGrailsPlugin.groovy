@@ -9,6 +9,10 @@ import javax.sql.DataSource
 
 class GrailsMelodyPluginGrailsPlugin extends Plugin {
 
+    static {
+        ExpandoMetaClass.enableGlobally()
+    }
+
     private static final Logger LOG = LoggerFactory.getLogger(GrailsMelodyPluginGrailsPlugin.class)
 
     // the version or versions of Grails the plugin is designed for
