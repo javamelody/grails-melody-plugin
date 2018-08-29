@@ -10,6 +10,7 @@ import javax.sql.DataSource
 class GrailsMelodyPluginGrailsPlugin extends Plugin {
 
     static {
+        //Plugin needs ExpandoMetaClass to be able to monitor Grails Services correctly.
         ExpandoMetaClass.enableGlobally()
     }
 
