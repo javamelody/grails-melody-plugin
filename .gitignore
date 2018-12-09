@@ -18,3 +18,5 @@ stacktrace.log
 /build/
 .gradle
 .idea
+**/build/
+**/out/
