@@ -1,4 +1,4 @@
 include 'app-integration-tests'
 include 'plugin'
-findProject(':plugin').name = 'melody-plugin'
-rootProject.name = 'grails-melody-plugin'
+findProject(':plugin').name = 'grails-melody-plugin'
+rootProject.name = 'grails-melody-plugin-root'
