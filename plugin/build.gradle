@@ -10,7 +10,7 @@ buildscript {
 
 def versionTxt = file("${rootProject.projectDir}/version.txt")
 def versionPlugin = versionTxt.exists() ? versionTxt.text.trim() : '0.1-SNAPSHOT'
-def versionDependency = '1.73.1'
+def versionDependency = '1.74.0'
 group "org.grails.plugins"
 version = versionPlugin
 
