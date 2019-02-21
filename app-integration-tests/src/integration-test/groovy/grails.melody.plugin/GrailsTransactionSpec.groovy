@@ -26,7 +26,7 @@ class GrailsTransactionSpec extends Specification {
         SampleDomain.count() == 1
 
         def requests = JdbcWrapper.SINGLETON.sqlCounter.requests
-        requests.size() > 0
+        requests.size() == 2
         requests[0].name.startsWith('insert into sample_domain')
         requests[1].name.startsWith('select count') //Domain class afterInsert method
     }
