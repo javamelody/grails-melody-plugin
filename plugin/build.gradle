@@ -10,7 +10,7 @@ buildscript {
 
 def versionTxt = file("${rootProject.projectDir}/version.txt")
 def versionPlugin = versionTxt.exists() ? versionTxt.text.trim() : '0.1-SNAPSHOT'
-def versionDependency = '1.74.0'
+def versionDependency = '1.76.0'
 
 group "org.grails.plugins"
 version = versionPlugin
@@ -47,7 +47,6 @@ dependencies {
 }
 
 grailsPublish {
-    println "USER --- ${System.getenv('BINTRAY_USER')}"
     user = System.getenv("BINTRAY_USER")
     key = System.getenv("BINTRAY_KEY")
     githubSlug = 'javamelody/grails-melody-plugin'

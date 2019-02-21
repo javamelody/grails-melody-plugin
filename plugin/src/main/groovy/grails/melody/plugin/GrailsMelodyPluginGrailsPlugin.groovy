@@ -4,7 +4,7 @@ import grails.plugins.Plugin
 import net.bull.javamelody.JdbcWrapper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy
+import org.springframework.jdbc.datasource.DelegatingDataSource
 
 import javax.sql.DataSource
 
@@ -67,7 +67,7 @@ class GrailsMelodyPluginGrailsPlugin extends Plugin {
                 def bean = applicationContext.getBean(hibernateBeanName)
                 def transactionManager = bean.transactionManager
                 def dataSource = transactionManager.dataSource
-                if (dataSource instanceof TransactionAwareDataSourceProxy) {
+                if (dataSource instanceof DelegatingDataSource) {
                     LOG.debug "Wrapping Hibernate DataStore DataSource"
                     dataSource.targetDataSource = JdbcWrapper.SINGLETON.createDataSourceProxy(dataSource.targetDataSource)
                 } else {
