@@ -1,6 +1,7 @@
 package grails.melody.plugin
 
 import grails.plugins.Plugin
+import grails.util.Environment
 import net.bull.javamelody.JdbcWrapper
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
