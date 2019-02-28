@@ -12,7 +12,8 @@ class GrailsMelodyPluginGrailsPlugin extends Plugin {
 
     static {
         //Plugin needs ExpandoMetaClass to be able to monitor Grails Services correctly.
-        ExpandoMetaClass.enableGlobally()
+        if (Environment.current != Environment.TEST)
+            ExpandoMetaClass.enableGlobally()
     }
 
     private static final Logger LOG = LoggerFactory.getLogger(GrailsMelodyPluginGrailsPlugin.class)
